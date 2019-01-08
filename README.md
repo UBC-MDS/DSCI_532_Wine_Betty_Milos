@@ -6,4 +6,4 @@ Contributors:
 |---|---| 
 |Milos Milic | @milicmil |
 
-Link to [Proposal]()
+Link to [Proposal](https://github.com/bettybhzhou/DSCI_532_Wine_Betty_Milos/blob/master/Proposal.md)
