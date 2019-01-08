@@ -2,8 +2,8 @@
 
 Contributors:
 
-| Betty Zhou| 
-|---|---| [@bettybhzhou](https://github.com/bettybhzhou)|
+| Betty Zhou| [@bettybhzhou](https://github.com/bettybhzhou)|
+|---|---| 
 |Milos Milic | @milicmil |
 
 Link to [Proposal]()
