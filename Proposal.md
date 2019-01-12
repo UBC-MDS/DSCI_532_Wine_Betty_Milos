@@ -9,13 +9,10 @@ We will be visualizing a [dataset]( https://www.kaggle.com/zynicide/wine-reviews
 
 ## 3: Usage scenario & tasks  
 
-The typical user as mentioned in the Overview would be a customer looking for a wine they may have not come across. Whether the user is an institutional customer (Restaurant, Bar owner etc.. ) they would use the tool in the same way. They would select the price range of the wine they would like to look at, and could select the __Minimum Rating__ for the wine they would like to look at and a __Price range__. To drill down the data they can select a particular __wine type__ to look at and/or the __Wine Country__. The map would be updated and would show the highlight the countries that have wines that fit the parameters. Hovering over the country would show the individual wines that fit the criteria and the inclusion of a map would hopefully highlight some wine producing regions the user may not have considered initially.
-
- The table below would show a summary of the price and rating average for each country based on the selected variables to give an overall summary by country.
-
+The typical user as mentioned in the overview would be a customer looking for a wine they may have not come across. Whether the user is an institutional customer (Restaurant, Bar owner etc.. ), they would use the tool in the same way. They would select the price range of the wine they would like to look at, and could select the __minimum rating__ for the wine they would like to look at and a __price range__. To drill down the data they can select a particular __wine type__ to look at and/or the __wine country__. The map would be updated and highlight the countries that have wines that fit the parameters. Hovering over the country would show a summary of the price and rating average for each country based on the selected variables. The inclusion of a map would hopefully highlight some wine producing regions that the user may not have considered initially. The table below the map would show the individual wines that fit the criteria.
 
 ## 4. Description of your app & sketch
 
-The app contains three distinct regions. The region on the left would contain the various options the user would be using in order to subdivide the wines according to the metrics they are interested in. Using the sliders the __Price range__ and the __Minimum Rating__ can be set. For further details, the dropdown list can be used to look at specific  __wine type__ and __Wine Country__. The choices would be reflected in the table and the map.
+The app contains three distinct regions. The region on the left would contain the various options the user would be using in order to subdivide the wines according to the metrics they are interested in. Using the sliders the __price range__ and the __minimum rating__ can be set. For further details, the dropdown list can be used to look at specific  __wine type__ and __Wine Country__. The choices would be reflected in the table and the map.
 
 ![dashBoard](/img/Design_proposal.PNG "App Sketch")
