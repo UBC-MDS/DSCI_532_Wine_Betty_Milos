@@ -13,6 +13,6 @@ The typical user as mentioned in the overview would be a customer looking for a 
 
 ## 4. Description of your app & sketch
 
-The app contains three distinct regions. The region on the left would contain the various options the user would be using in order to subdivide the wines according to the metrics they are interested in. Using the sliders the __price range__ and the __minimum rating__ can be set. For further details, the dropdown list can be used to look at specific  __wine type__ and __Wine Country__. The choices would be reflected in the table and the map.
+The app contains three distinct regions. The region on the left would contain the various options the user would be using in order to subdivide the wines according to the metrics they are interested in. Using the sliders the __price range__ and the __minimum rating__ can be set. For further details, the dropdown list can be used to look at specific  __wine type__ and __wine country__. The choices would be reflected in the table and the map.
 
 ![dashBoard](/img/Design_proposal.PNG "App Sketch")
