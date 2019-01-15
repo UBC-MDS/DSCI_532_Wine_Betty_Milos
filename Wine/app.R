@@ -13,6 +13,7 @@ ui <- fluidPage(
    sidebarLayout(
      sidebarPanel(
        chooseSliderSkin("HTML5", color = '#778899'),
+       tags$head(tags$style(HTML( '.has-feedback .form-control { padding-right: 0px;}' ))),
        sliderInput("priceInput", "Select your desired price range.",
                    min = 0, max = 100, value = c(15, 30), pre="$"),
        sliderInput("ratingInput", "Select your desired rating range.",
@@ -67,7 +68,7 @@ server <- function(input, output) {
               options = list(
                 autoWidth = TRUE,
                 scrollX = TRUE,
-                columnDefs = list(list(width = '400', targets = c(8))),
+                columnDefs = list(list(width = '200', targets = c(8))),
                 initComplete = JS(
                   "function(settings, json) {",
                   "$(this.api().table().header()).css({'background-color': '#778899', 'color': '#fff'});",
