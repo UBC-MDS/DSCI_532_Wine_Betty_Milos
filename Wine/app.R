@@ -1,12 +1,16 @@
 library(shiny)
+library(shinyWidgets) 
 library(tidyverse)
+library(DT)
+
 wine <- read.csv("winemag-data-130k-v2.csv", stringsAsFactors = FALSE) %>% 
-  select("country":"winery")
+  select("price","points", "country", "province", "variety", "title", "taster_name", "description")
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
    sidebarLayout(
      sidebarPanel(
+       chooseSliderSkin("HTML5", color = '#778899'),
        sliderInput("priceInput", "Select your desired price range.",
                    min = 0, max = 100, value = c(15, 30), pre="$"),
        sliderInput("ratingInput", "Select your desired rating range.",
@@ -14,18 +18,16 @@ ui <- fluidPage(
        
      ),
      mainPanel(
-      # plotOutput("price_hist"),
-      # dataTableOutput("table")
-       tabsetPanel(type = "tabs",
-                   tabPanel("Histogram_Price", plotOutput("price_hist"),dataTableOutput("table")),
-                   #tabPanel("Summary", verbatimTextOutput("summary")),
-                   tabPanel("Histogram_Rating", plotOutput("rating_hist"))
+       tabsetPanel(
+         tabPanel("Price Distribution", plotOutput("price_hist")),
+         tabPanel("Rating Distribution",plotOutput("rating_hist")),
+         tabPanel("Map")),
+       dataTableOutput("table")
                    
        )
      )
-     
    )
-)
+
 
 # Define server logic required to draw a histogram
 server <- function(input, output) {
@@ -52,13 +54,23 @@ server <- function(input, output) {
        geom_histogram()
    )
    
-   output$table <- renderDataTable(
-     wine_filtered()
-     
-     #this is for the table below
-
-   )
-
+  output$table <- renderDataTable(
+    datatable(wine_filtered(), 
+              filter = "top",
+              colnames = c("Price","Rating", "Country", "Province", "Variety", "Title", "Name of Rater", "Description"),
+              options = list(
+                autoWidth = TRUE,
+                scrollX = TRUE,
+                columnDefs = list(list(width = '400', targets = c(8))),
+                initComplete = JS(
+                  "function(settings, json) {",
+                  "$(this.api().table().header()).css({'background-color': '#778899', 'color': '#fff'});",
+                  "}"
+                )
+              )
+    )
+  )
+  
 }
 
 # Run the application 
