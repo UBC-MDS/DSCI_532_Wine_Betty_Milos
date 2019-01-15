@@ -19,7 +19,7 @@ ui <- fluidPage(
        tabsetPanel(type = "tabs",
                    tabPanel("Histogram_Price", plotOutput("price_hist"),dataTableOutput("table")),
                    #tabPanel("Summary", verbatimTextOutput("summary")),
-                   tabPanel("Histogram_Rating", plotOutput("rating_hist"),dataTableOutput("table"))
+                   tabPanel("Histogram_Rating", plotOutput("rating_hist"))
                    
        )
      )
