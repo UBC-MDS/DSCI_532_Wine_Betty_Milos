@@ -10,12 +10,18 @@ ui <- fluidPage(
        sliderInput("priceInput", "Select your desired price range.",
                    min = 0, max = 100, value = c(15, 30), pre="$"),
        sliderInput("ratingInput", "Select your desired rating range.",
-                   min = 80, max = 100, value = c(15, 30))
+                   min = 80, max = 100, value = c(80, 85))
        
      ),
      mainPanel(
-       plotOutput("price_hist"),
-       dataTableOutput("table")
+      # plotOutput("price_hist"),
+      # dataTableOutput("table")
+       tabsetPanel(type = "tabs",
+                   tabPanel("Histogram_Price", plotOutput("price_hist"),dataTableOutput("table")),
+                   #tabPanel("Summary", verbatimTextOutput("summary")),
+                   tabPanel("Histogram_Rating", plotOutput("rating_hist"),dataTableOutput("table"))
+                   
+       )
      )
      
    )
@@ -40,8 +46,17 @@ server <- function(input, output) {
        geom_histogram()
    )
    
+  output$rating_hist <- renderPlot(
+    wine_filtered() %>% 
+       ggplot(aes(points)) + 
+       geom_histogram()
+   )
+   
    output$table <- renderDataTable(
      wine_filtered()
+     
+     #this is for the table below
+
    )
 
 }
