@@ -8,6 +8,8 @@ wine <- read.csv("winemag-data-130k-v2.csv", stringsAsFactors = FALSE) %>%
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
+  titlePanel("Wind Down the Wine", 
+             windowTitle = "Wine Review App"),
    sidebarLayout(
      sidebarPanel(
        chooseSliderSkin("HTML5", color = '#778899'),
@@ -45,13 +47,17 @@ server <- function(input, output) {
    output$price_hist <- renderPlot(
      wine_filtered() %>% 
        ggplot(aes(price)) + 
-       geom_histogram()
+       geom_histogram() +
+       xlab("Price ($)") +
+       theme(text = element_text(size=15))
    )
    
   output$rating_hist <- renderPlot(
     wine_filtered() %>% 
        ggplot(aes(points)) + 
-       geom_histogram()
+       geom_histogram() +
+       xlab("Rating (out of 100)") +
+       theme(text = element_text(size=15))
    )
    
   output$table <- renderDataTable(
