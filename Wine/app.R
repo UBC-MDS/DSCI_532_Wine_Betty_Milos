@@ -23,8 +23,7 @@ ui <- fluidPage(
      mainPanel(
        tabsetPanel(
          tabPanel("Price Distribution", plotOutput("price_hist")),
-         tabPanel("Rating Distribution",plotOutput("rating_hist")),
-         tabPanel("Map")),
+         tabPanel("Rating Distribution",plotOutput("rating_hist"))),
        dataTableOutput("table")
                    
        )
@@ -47,22 +46,26 @@ server <- function(input, output) {
   
    output$price_hist <- renderPlot(
      wine_filtered() %>% 
-       ggplot(aes(price)) + 
-       geom_histogram() +
+       ggplot(aes(price), fill) + 
+       geom_histogram(fill ='lightblue', colour='grey') +
        xlab("Price ($)") +
-       theme(text = element_text(size=15))
+       theme(text = element_text(size=15)) +
+       theme_bw()
    )
    
   output$rating_hist <- renderPlot(
     wine_filtered() %>% 
        ggplot(aes(points)) + 
-       geom_histogram() +
+       geom_histogram(fill ='pink', colour='grey') +
        xlab("Rating (out of 100)") +
-       theme(text = element_text(size=15))
+       theme(text = element_text(size=20)) +
+       theme_bw()
    )
    
   output$table <- renderDataTable(
     datatable(wine_filtered(), 
+              caption = "Table contains filtered results based on selected price and rating ranges. 
+              \n Further filtering can be performed using the search boxes under each column.",
               filter = "top",
               colnames = c("Price","Rating", "Country", "Province", "Variety", "Title", "Name of Rater", "Description"),
               options = list(
