@@ -1,0 +1,12 @@
+name: wine
+title:
+username:
+account: bettybhz
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 655123
+bundleId: 1823480
+url: https://bettybhz.shinyapps.io/wine/
+when: 1547871069.64937
+asMultiple: FALSE
+asStatic: FALSE
