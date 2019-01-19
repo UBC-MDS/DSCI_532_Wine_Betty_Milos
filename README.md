@@ -6,4 +6,9 @@ Contributors:
 |---|---|
 |Milos Milic | [@milicmil](https://github.com/milicmil)|
 
-Link to [Proposal](https://github.com/bettybhzhou/DSCI_532_Wine_Betty_Milos/blob/master/Proposal.md)
+[Proposal](https://github.com/bettybhzhou/DSCI_532_Wine_Betty_Milos/blob/master/Proposal.md)
+
+[Milestone 2](https://github.com/bettybhzhou/DSCI_532_Wine_Betty_Milos/blob/master/milestone_2.md)
+
+[Shiny app](https://bettybhz.shinyapps.io/wine/)
+
