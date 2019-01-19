@@ -21,7 +21,7 @@ We had three broad tasks for our milestone 2:
 ##### Have the correct table information shown
   - The original dataset had many superfluous columns that did not need to be shown to the user and needed to be removed. We just wanted to show: __Price, Rating, Country, Province, Variety, Title, Name of Rater, Description__.
 
-  - The rows in the table are filtered based on user specified price and rating, we wanted to have more options for the user to filter out the subset of wines they collected. Therefore, we added search boxes below each column of the table for the user to further filter the results.
+  - The rows in the table are filtered based on user specified price and rating, we wanted to have more options for the user to filter out the subset of wines they collected. Therefore, we added search boxes below each column of the table for the user to further filter the results. Each column also contains arrows to sort the filtered results in ascending or descending order. There is also a global search bar above the table.
 ![dashBoard](/img/table.PNG "price distribution")
 
 ## 3 Vision and Next Steps
