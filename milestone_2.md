@@ -1,6 +1,7 @@
 # Wine Review Milestone 2
 
 Milos Milic and Betty Zhou
+
 ## 1. Rationale
 
 Our Rationale for designing this app was to provide an easy to use interactive tool for a user (whether an institutional customer like owners of restaurants or bars or an individual customer) to find potential wines within their budget and rating criteria. We wanted to design three sections: The slider section on the left, The Bar Chart section with tabs on the upper right and the summary table on the bottom right. 
