@@ -12,16 +12,17 @@ We had Three Broad tasks for our Milestone 2:
 
 ##### Build correct sliders
   - We implemented a rating slider and a price slider for users to filter the dataset.
+  ![](/img/slider.PNG "rating distribution")
 
 ##### Have the tabs implemented
   - We added two tabs in the main panel of the app to allow the user to toggle between the rating distribution or price distribution.
-  ![dashBoard](/img/rating_distribution.PNG "rating distribution")
+  ![](/img/tab.PNG "rating distribution")
 
 ##### Have the correct table information shown
   - The original dataset had many superfluous columns that did not need to be shown to the user and needed to be removed. We just wanted to show: __Price, Rating, Country, Province, Variety, Title, Name of Rater, Description__.
 
   - The rows in the table are filtered based on user specified price and rating, we wanted to have more options for the user to filter out the subset of wines they collected. Therefore, we added search boxes below each column of the table for the user to further filter the results.
-![dashBoard](/img/price_distribution.PNG "price distribution")
+![dashBoard](/img/table.PNG "price distribution")
 
 ## 3 Vision and Next Steps
 
