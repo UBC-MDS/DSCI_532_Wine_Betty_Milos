@@ -2,7 +2,7 @@
 
 Contributors: Milos Milic and Betty Zhou
 
-### Reflection on the usefulness of the feedback you received.**
+### Reflection on the usefulness of the feedback you received.
 
 
 #### 1. Reflect on the usability of your app. How easy or hard was it for your peers to use your app? Did you expect them to use the app in they way they did?
@@ -26,6 +26,6 @@ We were recommended to add a country or wine variety selection widget for the di
 The  "fly-on-the-wall" was very useful for identifying areas of the app that could make the app more easily navigable for new users and helped pinpoint problems that would not have been obvious to the creators. For example, we thought it was obvious that the search bars under each column indicated that you could filter results in each column further, but the users suggested to add a statement explicitly stating the functionality of the search boxes.
 
 
-### Reflection on how your project has changed since Milestone 2, and why.**
+### Reflection on how your project has changed since Milestone 2, and why.
 
 All in all, we improved our app by making it more user-friendly and easily navigable by including help text and notes throughout the app. Our objective stayed the same as the reviewers all agreed that the app was intuitive and easy to understand.
