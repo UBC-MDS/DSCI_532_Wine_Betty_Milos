@@ -18,5 +18,7 @@ Contributors:
 ## Feedback Given to Other Projects:
 
 [Youtube Trending](https://github.com/UBC-MDS/DSCI532_Youtube-Trending/issues/12)
+
 [Cancer Incidence](https://github.com/UBC-MDS/DSCI_532_Cancer-Incidence/issues/17)
+
 [Crime Data](https://github.com/UBC-MDS/Crime_Data/issues/20)
