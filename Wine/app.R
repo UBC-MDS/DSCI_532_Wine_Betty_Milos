@@ -29,7 +29,8 @@ ui <- fluidPage(
        # Tabs for Price and Rating Distribution
        tabsetPanel(
          tabPanel("Price Distribution", plotOutput("price_hist")),
-         tabPanel("Rating Distribution",plotOutput("rating_hist"))),
+         tabPanel("Rating Distribution",plotOutput("rating_hist")),
+         tabPanel("Map", plotOutput("map"))),
        p("Table of filtered results are shown below:", style='font-size:120%'),
        dataTableOutput("table")
        )
@@ -50,6 +51,27 @@ server <- function(input, output) {
              points > input$ratingInput[1],
              points < input$ratingInput[2])
     )
+  # filter dataset to count country based on selected price and rating input
+  wine_map <- reactive(
+    wine %>%
+      mutate(country = str_replace_all(country, "England", "United Kingdom")) %>%
+      mutate(ISO = countrycode::countrycode(country, "country.name", "iso2c")) %>%
+      filter(price > input$priceInput[1] &
+               price < input$priceInput[2] &
+               points > input$ratingInput[1] &
+               points < input$ratingInput[2]) %>%
+      group_by(ISO) %>%
+      summarise(count = n()) %>%
+      na.omit()
+  )
+  
+  # Pull world map using ggmap
+  world_map <- reactive(map_data("world") %>%
+                          mutate(ISO = countrycode::countrycode(region, "country.name", "iso2c")))
+  
+  # Join count of countries to world map
+  map_wine <- reactive( world_map() %>%
+                          left_join(wine_map(), by = "ISO"))
   
   # Price histogram
    output$price_hist <- renderPlot(
@@ -71,17 +93,30 @@ server <- function(input, output) {
        theme(text = element_text(size=20))
    )
   
+  # Plot world map 
+  output$map <- renderPlot(
+    map_wine() %>%
+      ggplot(aes(long, lat, group = group, fill=count)) +
+      geom_polygon()+
+      xlab("longitude") +
+      ylab("latitude") +
+      theme_bw() +
+      theme(text = element_text(size=20))
+  )
+  
   # filtered results table 
   output$table <- renderDataTable(
     datatable(wine_filtered(), 
               caption = "Table contains filtered results based on selected price and rating ranges. 
-              \n Further filtering can be performed using the search boxes under each column.",
+              \n Further filtering can be performed using the search boxes under each column.
+              \n Further filter Price and Rating using the pop-up slider or input a range in the search                box (ex. 19...30).",
               filter = "top",
               colnames = c("Price","Rating", "Title", "Country", "Province", "Variety", "Name of Rater", "Description"),
               options = list(
                 autoWidth = TRUE,
                 scrollX = TRUE,
-                columnDefs = list(list(width = '200', targets = c(8))),
+                columnDefs = list(list(width = '200', targets = c(8)), 
+                                  list(width = '100', targets = c(1,2))),
                 initComplete = JS(
                   "function(settings, json) {",
                   "$(this.api().table().header()).css({'background-color': '#778899', 'color': '#fff'});",
