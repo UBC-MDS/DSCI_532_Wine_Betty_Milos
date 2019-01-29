@@ -5,8 +5,8 @@ account: bettybhz
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 655123
-bundleId: 1842441
+bundleId: 1842695
 url: https://bettybhz.shinyapps.io/wine/
-when: 1548717529.93879
+when: 1548729427.39849
 asMultiple: FALSE
 asStatic: FALSE
