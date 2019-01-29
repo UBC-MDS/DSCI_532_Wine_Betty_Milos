@@ -2,6 +2,7 @@ library(shiny)
 library(shinyWidgets) 
 library(tidyverse)
 library(DT)
+library(ggmap)
 
 wine <- read.csv("winemag-data-130k-v2.csv", stringsAsFactors = FALSE) %>% 
   select("price","points", "title", "country", "province", "variety", "taster_name", "description")

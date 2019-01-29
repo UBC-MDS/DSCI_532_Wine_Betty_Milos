@@ -15,6 +15,8 @@ Contributors:
 
 [Milestone 3](https://github.com/bettybhzhou/DSCI_532_Wine_Betty_Milos/blob/master/doc/milestone_3.md)
 
+[Milestone 4](https://github.com/bettybhzhou/DSCI_532_Wine_Betty_Milos/blob/master/doc/milestone_4.md)
+
 ## Feedback Given to Other Projects:
 
 [Youtube Trending](https://github.com/UBC-MDS/DSCI532_Youtube-Trending/issues/12)
